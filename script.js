@@ -4,6 +4,15 @@ const form = document.querySelector('#book-form');
 // book collection
 let collection = [];
 
+// get all the data from the local storage and add it to the book list;
+const booksOnLocalStorage = JSON.parse(localStorage.getItem('books'));
+if (booksOnLocalStorage !== null) {
+  collection = [...booksOnLocalStorage];
+  collection.forEach((book) => {
+    addToBookList(book.title, book.author, book.bookId);
+  });
+}
+
 /**
  * This method adds a book to the collection
  */
@@ -16,18 +25,20 @@ function addBook() {
     bookId: collection.length,
   };
   collection.push(book);
+  // update the local storage
+  localStorage.setItem('books', JSON.stringify(collection));
 }
 
 /**
  * Renders all the books in the array to the UI
  * @param {Array} collection
  */
-function addToBookList(book) {
+function addToBookList(title, author, bookId) {
   // create all necessary variables
-  const bookTitle = document.createElement('h2');
-  bookTitle.innerText = book.title;
+  const bookTitle = document.createElement('p');
+  bookTitle.innerText = title;
   const bookAuthor = document.createElement('p');
-  bookAuthor.innerText = book.author;
+  bookAuthor.innerText = author;
   const removeBtn = document.createElement('button');
   removeBtn.innerText = 'Remove';
   const hr = document.createElement('hr');
@@ -47,8 +58,10 @@ function addToBookList(book) {
     bookList.removeChild(bookContainer);
     // update collection
     collection = collection.filter((obj) => {
-      return obj.bookId !== book.bookId;
+      return obj.bookId !== bookId;
     });
+    // update local storage
+    localStorage.setItem('books', JSON.stringify(collection));
   });
 }
 
@@ -56,5 +69,6 @@ function addToBookList(book) {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   addBook();
-  addToBookList(collection[collection.length - 1]);
+  const book = collection[collection.length - 1];
+  addToBookList(book.title, book.author, book.bookId);
 });
