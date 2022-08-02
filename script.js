@@ -4,34 +4,11 @@ const form = document.querySelector('#book-form');
 // book collection
 let collection = [];
 
-// get all the data from the local storage and add it to the book list;
-const booksOnLocalStorage = JSON.parse(localStorage.getItem('books'));
-if (booksOnLocalStorage !== null) {
-  collection = [...booksOnLocalStorage];
-  collection.forEach((book) => {
-    addToBookList(book.title, book.author, book.bookId);
-  });
-}
-
-/**
- * This method adds a book to the collection
- */
-function addBook() {
-  const titleReceived = document.getElementById('title').value;
-  const authorReceived = document.getElementById('author').value;
-  const book = {
-    title: titleReceived,
-    author: authorReceived,
-    bookId: collection.length,
-  };
-  collection.push(book);
-  // update the local storage
-  localStorage.setItem('books', JSON.stringify(collection));
-}
-
 /**
  * Renders all the books in the array to the UI
- * @param {Array} collection
+ * @param {string, string, number} title
+ * @param {string} author
+ * @param {number} bookId
  */
 function addToBookList(title, author, bookId) {
   // create all necessary variables
@@ -57,12 +34,35 @@ function addToBookList(title, author, bookId) {
   removeBtn.addEventListener('click', () => {
     bookList.removeChild(bookContainer);
     // update collection
-    collection = collection.filter((obj) => {
-      return obj.bookId !== bookId;
-    });
+    collection = collection.filter((obj) => obj.bookId !== bookId);
     // update local storage
     localStorage.setItem('books', JSON.stringify(collection));
   });
+}
+
+// get all the data from the local storage and add it to the book list;
+const booksOnLocalStorage = JSON.parse(localStorage.getItem('books'));
+if (booksOnLocalStorage !== null) {
+  collection = [...booksOnLocalStorage];
+  collection.forEach((book) => {
+    addToBookList(book.title, book.author, book.bookId);
+  });
+}
+
+/**
+ * This method adds a book to the collection
+ */
+function addBook() {
+  const titleReceived = document.getElementById('title').value;
+  const authorReceived = document.getElementById('author').value;
+  const book = {
+    title: titleReceived,
+    author: authorReceived,
+    bookId: collection.length,
+  };
+  collection.push(book);
+  // update the local storage
+  localStorage.setItem('books', JSON.stringify(collection));
 }
 
 // event listener on the form
