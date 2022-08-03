@@ -4,22 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts to use in project -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Awesome Books</title>
   </head>
   <body>
-    <header><h1>Awesome Books</h1></header>
     <main>
+      <h1>Awesome Books</h1>
       <div class="book-list"></div>
+      <hr />
+      <h2>Add a new book</h2>
       <form id="book-form" action="#">
         <ul>
-          <li><input id="title" type="text" placeholder="Title" /></li>
-          <li><input id="author" type="text" placeholder="Author" /></li>
-          <li><input type="submit" value="Add" /></li>
+          <li>
+            <input
+              id="title"
+              type="text"
+              placeholder="Title"
+              class="space-inputs"
+              required
+            />
+          </li>
+          <li>
+            <input
+              id="author"
+              type="text"
+              placeholder="Author"
+              class="space-inputs"
+              required
+            />
+          </li>
+          <li><input type="submit" value="Add" class="add-btn" /></li>
         </ul>
       </form>
     </main>
     <!-- script file -->
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
