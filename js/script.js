@@ -1,20 +1,8 @@
 class Book {
-  // define a static variable to count all objects that will be created from the book class
-  static count = 0;
-
-  // create a ref private field value that will aid us in getting id's for every object created
-  #ref;
-
-  constructor(title, author) {
+  constructor(title, author, id = Date.now()) {
     this.title = title;
     this.author = author;
-    Book.count += 1;
-    this.#ref = Book.count;
-  }
-
-  // getter for quoting the id of every object that will be created
-  get id() {
-    return this.#ref;
+    this.id = id;
   }
 }
 
@@ -57,7 +45,8 @@ class BookList {
   addBook(title, author) {
     const book = new Book(title, author);
     this.list.push(book);
-    storeToLocal(this.list);
+    let fromLocalStorage = retrieveFromStorage();
+    storeToLocal([...fromLocalStorage, book]);
   }
 
   /**
@@ -85,10 +74,11 @@ class BookList {
 
     removeBtn.addEventListener('click', () => {
       bookList.removeChild(bookContainer);
-      // we update the book list
-      this.list = this.list.filter((bok) => bok.id !== bookId);
+
       // we update the local storage as well
-      storeToLocal(this.list);
+      let fromLocal = retrieveFromStorage();
+      fromLocal = fromLocal.filter((buk) => buk.id !== bookId);
+      storeToLocal(fromLocal);
     });
   }
 
@@ -107,25 +97,27 @@ class BookList {
   }
 }
 
-// Create an instance of the book list class
-const bookListInstance = new BookList();
+window.addEventListener('load', () => {
+  // Create an instance of the book list class
+  const bookListInstance = new BookList();
 
-// render all books stored in the local storage
-const retrieved = retrieveFromStorage();
-if (retrieved !== null) {
-  retrieved.forEach((book) => {
-    bookListInstance.populateUi(book.title, book.author, book.id);
+  // render all books stored in the local storage
+  const retrieved = retrieveFromStorage();
+  if (retrieved !== null) {
+    retrieved.forEach((book) => {
+      bookListInstance.populateUi(book.title, book.author, book.id);
+    });
+  }
+
+  // event listener on the form
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // received all user inputs
+    const titleReceived = document.getElementById('title').value;
+    const authorReceived = document.getElementById('author').value;
+
+    bookListInstance.addBook(titleReceived, authorReceived);
+    bookListInstance.render();
   });
-}
-
-// event listener on the form
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  // received all user inputs
-  const titleReceived = document.getElementById('title').value;
-  const authorReceived = document.getElementById('author').value;
-
-  bookListInstance.addBook(titleReceived, authorReceived);
-  bookListInstance.render();
 });
