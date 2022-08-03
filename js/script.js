@@ -138,3 +138,9 @@ menu.appendChild(addNew);
 menu.appendChild(contact);
 navBar.appendChild(logo);
 navBar.appendChild(menu);
+
+// ADD FOOTER
+const footer = document.getElementById('copyright');
+const copyright = document.createElement('p');
+copyright.innerText = 'Copyright ...'
+footer.appendChild(copyright);
