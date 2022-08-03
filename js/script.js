@@ -117,3 +117,24 @@ window.addEventListener('load', () => {
     BookList.addBook(titleReceived, authorReceived);
   });
 });
+
+// ADD NAVIGATION
+const navBar = document.querySelector('.nav-bar');
+const logo = document.createElement('a');
+logo.innerText = 'Awesome Books';
+const menu = document.createElement('div');
+menu.className = 'menu'
+const list = document.createElement('a');
+list.innerText = 'List';
+list.href = '#list';
+const addNew = document.createElement('a');
+addNew.innerText = 'Add New';
+addNew.href = '#add-new';
+const contact = document.createElement('a');
+contact.innerText = 'Contact';
+contact.href = '#contact';
+menu.appendChild(list);
+menu.appendChild(addNew);
+menu.appendChild(contact);
+navBar.appendChild(logo);
+navBar.appendChild(menu);

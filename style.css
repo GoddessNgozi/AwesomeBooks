@@ -20,6 +20,9 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-color);
+}
+
+main {
   padding: 10px;
 }
 
@@ -53,6 +56,35 @@ h2 {
   font-weight: 500;
   cursor: pointer;
   box-shadow: 1px 1px 3px black;
+}
+
+/* NAVIGATION */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu a {
+  margin-right: 2rem;
+  border-right: 2px solid black;
+  padding-right: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu a:nth-child(3) {
+  border-right: 0px;
+  padding-right: 0px;
 }
 
 @media (min-width: 768px) {
