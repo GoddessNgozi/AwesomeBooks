@@ -22,5 +22,5 @@
       }
     ]
   },
-  "ignorePatterns": ["dist/", "build/", "/js"]
+  "ignorePatterns": ["dist/", "build/"]
 }
