@@ -139,6 +139,30 @@ menu.appendChild(contact);
 navBar.appendChild(logo);
 navBar.appendChild(menu);
 
+//ADD CONTACT
+const contactUs = document.getElementById('contact');
+const contactInfo = document.createElement('h2');
+contactInfo.innerText = 'Contact information';
+const question = document.createElement('p');
+question.innerText = 'Do you have any questions or you just want to say \"Hello\"?';
+const youCan = document.createElement('p');
+youCan.innerText = 'You can reach out to us!';
+const contactDetails = document.createElement('ul');
+contactDetails.className = 'contact-details';
+const details1 = document.createElement('li');
+details1.innerText = 'Our email: favourezeugwa@gmail.com';
+const details2 = document.createElement('li');
+details2.innerText = 'Our phone number: +564-8859507484';
+const details3 = document.createElement('li');
+details3.innerText = 'Our Address: Surulere, Lagos state, Nigeria.';
+contactDetails.appendChild(details1);
+contactDetails.appendChild(details2);
+contactDetails.appendChild(details3);
+contactUs.appendChild(contactInfo);
+contactUs.appendChild(question);
+contactUs.appendChild(youCan);
+contactUs.appendChild(contactDetails);
+
 // ADD FOOTER
 const footer = document.getElementById('copyright');
 const copyright = document.createElement('p');
