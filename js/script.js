@@ -123,7 +123,7 @@ const navBar = document.querySelector('.nav-bar');
 const logo = document.createElement('a');
 logo.innerText = 'Awesome Books';
 const menu = document.createElement('div');
-menu.className = 'menu'
+menu.className = 'menu';
 const list = document.createElement('a');
 list.innerText = 'List';
 const addNew = document.createElement('a');
@@ -136,12 +136,12 @@ menu.appendChild(contact);
 navBar.appendChild(logo);
 navBar.appendChild(menu);
 
-//ADD CONTACT
+// ADD CONTACT
 const contactUs = document.getElementById('contact');
 const contactInfo = document.createElement('h2');
 contactInfo.innerText = 'Contact information';
 const question = document.createElement('p');
-question.innerText = 'Do you have any questions or you just want to say \"Hello\"?';
+question.innerText = 'Do you have any questions or you just want to say "Hello"?';
 const youCan = document.createElement('p');
 youCan.innerText = 'You can reach out to us!';
 const contactDetails = document.createElement('ul');
@@ -163,10 +163,11 @@ contactUs.appendChild(contactDetails);
 // ADD FOOTER
 const footer = document.getElementById('copyright');
 const copyright = document.createElement('p');
-copyright.innerText = 'Copyright ...'
+copyright.innerText = 'Copyright ...';
 footer.appendChild(copyright);
 
-//HIDE SECTIONS
+// HIDE SECTIONS
+const library = document.querySelector('.library');
 const addBook = document.querySelector('.add-book');
 list.addEventListener('click', () => {
   bookList.style.display = 'block';
@@ -175,7 +176,6 @@ list.addEventListener('click', () => {
   library.style.display = 'block';
 });
 
-const library = document.querySelector('.library');
 addNew.addEventListener('click', () => {
   bookList.style.display = 'none';
   contactUs.style.display = 'none';
