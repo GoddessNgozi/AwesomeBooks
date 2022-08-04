@@ -9,7 +9,7 @@ A basic website that allows users to add/remove books from a list.
 
 ## Live Demo (if available)
 
-N/A
+[Link](https://ngozikanwocha.github.io/AwesomeBooks/)
 
 ## Getting Started
 
