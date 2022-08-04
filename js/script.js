@@ -168,3 +168,26 @@ const footer = document.getElementById('copyright');
 const copyright = document.createElement('p');
 copyright.innerText = 'Copyright ...'
 footer.appendChild(copyright);
+
+//HIDE ITEMS
+const addBook = document.querySelector('.add-book');
+list.addEventListener('click', () => {
+  bookList.style.display = 'block'
+  contactUs.style.display = 'none';
+  addBook.style.display = 'none';
+});
+
+const library = document.querySelector('.library');
+addNew.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  contactUs.style.display = 'none';
+  addBook.style.display = 'block';
+  library.style.display = 'none';
+});
+
+contactUs.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  contactUs.style.display = 'flex';
+  addBook.style.display = 'none';
+  library.style.display = 'none';
+});
