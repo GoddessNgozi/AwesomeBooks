@@ -115,5 +115,78 @@ window.addEventListener('load', () => {
     const titleReceived = document.getElementById('title').value;
     const authorReceived = document.getElementById('author').value;
     BookList.addBook(titleReceived, authorReceived);
+    form.reset();
   });
+});
+
+// ADD NAVIGATION
+const navBar = document.querySelector('.nav-bar');
+const logo = document.createElement('a');
+logo.innerText = 'Awesome Books';
+const menu = document.createElement('div');
+menu.className = 'menu';
+const list = document.createElement('a');
+list.innerText = 'List';
+const addNew = document.createElement('a');
+addNew.innerText = 'Add New';
+const contact = document.createElement('a');
+contact.innerText = 'Contact';
+menu.appendChild(list);
+menu.appendChild(addNew);
+menu.appendChild(contact);
+navBar.appendChild(logo);
+navBar.appendChild(menu);
+
+// ADD CONTACT
+const contactUs = document.getElementById('contact');
+const contactInfo = document.createElement('h2');
+contactInfo.innerText = 'Contact information';
+const question = document.createElement('p');
+question.innerText = 'Do you have any questions or you just want to say "Hello"?';
+const youCan = document.createElement('p');
+youCan.innerText = 'You can reach out to us!';
+const contactDetails = document.createElement('ul');
+contactDetails.className = 'contact-details';
+const details1 = document.createElement('li');
+details1.innerText = 'Our email: johnandngozi@gmail.com';
+const details2 = document.createElement('li');
+details2.innerText = 'Our phone number: +564-8859507484';
+const details3 = document.createElement('li');
+details3.innerText = 'Our Address: Surulere, Lagos state, Nigeria.';
+contactDetails.appendChild(details1);
+contactDetails.appendChild(details2);
+contactDetails.appendChild(details3);
+contactUs.appendChild(contactInfo);
+contactUs.appendChild(question);
+contactUs.appendChild(youCan);
+contactUs.appendChild(contactDetails);
+
+// ADD FOOTER
+const footer = document.getElementById('copyright');
+const copyright = document.createElement('p');
+copyright.innerText = 'Copyright ...';
+footer.appendChild(copyright);
+
+// HIDE SECTIONS
+const library = document.querySelector('.library');
+const addBook = document.querySelector('.add-book');
+list.addEventListener('click', () => {
+  bookList.style.display = 'block';
+  contactUs.style.display = 'none';
+  addBook.style.display = 'none';
+  library.style.display = 'block';
+});
+
+addNew.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  contactUs.style.display = 'none';
+  addBook.style.display = 'block';
+  library.style.display = 'none';
+});
+
+contact.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  contactUs.style.display = 'flex';
+  addBook.style.display = 'none';
+  library.style.display = 'none';
 });
