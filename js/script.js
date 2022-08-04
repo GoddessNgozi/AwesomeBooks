@@ -190,3 +190,5 @@ contact.addEventListener('click', () => {
   addBook.style.display = 'none';
   library.style.display = 'none';
 });
+
+document.querySelector('.date').innerHTML = Date();
