@@ -147,7 +147,7 @@ youCan.innerText = 'You can reach out to us!';
 const contactDetails = document.createElement('ul');
 contactDetails.className = 'contact-details';
 const details1 = document.createElement('li');
-details1.innerText = 'Our email: favourezeugwa@gmail.com';
+details1.innerText = 'Our email: johnandngozi@gmail.com';
 const details2 = document.createElement('li');
 details2.innerText = 'Our phone number: +564-8859507484';
 const details3 = document.createElement('li');
@@ -166,12 +166,13 @@ const copyright = document.createElement('p');
 copyright.innerText = 'Copyright ...'
 footer.appendChild(copyright);
 
-//HIDE ITEMS
+//HIDE SECTIONS
 const addBook = document.querySelector('.add-book');
 list.addEventListener('click', () => {
   bookList.style.display = 'block';
   contactUs.style.display = 'none';
   addBook.style.display = 'none';
+  library.style.display = 'block';
 });
 
 const library = document.querySelector('.library');
