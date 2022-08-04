@@ -24,8 +24,9 @@ body {
 }
 
 .date {
-  float: right;
+  display: flex;
   margin-top: 10px;
+  justify-content: right;
 }
 
 li {

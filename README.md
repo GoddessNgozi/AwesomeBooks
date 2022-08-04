@@ -9,7 +9,7 @@ A basic website that allows users to add/remove books from a list.
 
 ## Live Demo (if available)
 
-[Link](https://ngozikanwocha.github.io/AwesomeBooks/)
+[https://ngozikanwocha.github.io/AwesomeBooks/](https://ngozikanwocha.github.io/AwesomeBooks/)
 
 ## Getting Started
 
@@ -45,11 +45,13 @@ These were linter tests mainly
 
 ## Authors
 
-👤 **Author1**
+👤 **Ngozika Nwocha**
 
 - GitHub: [NgozikaNwocha](https://github.com/githubhandle)
+- Twitter: [NgozikaNwocha](https://twitter.com/ngozikanwocha)
+- LinkedIn: [NgozikaNwocha](https://www.linkedin.com/in/ngozikanwocha/
 
-👤 **Author2**
+👤 **Kibirige John**
 
 - Github: [John-Kibrige](https://github.com/John-Kibirige)
 - Twitter: [kibirigejohn005](https://twitter.com/kibirigejohn005)
