@@ -23,6 +23,11 @@ body {
   padding: 0 10px 10px 10px;
 }
 
+.date {
+  float: right;
+  margin-top: 10px;
+}
+
 li {
   list-style: none;
 }
