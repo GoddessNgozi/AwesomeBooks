@@ -115,6 +115,7 @@ window.addEventListener('load', () => {
     const titleReceived = document.getElementById('title').value;
     const authorReceived = document.getElementById('author').value;
     BookList.addBook(titleReceived, authorReceived);
+    form.reset();
   });
 });
 
