@@ -126,13 +126,10 @@ const menu = document.createElement('div');
 menu.className = 'menu'
 const list = document.createElement('a');
 list.innerText = 'List';
-list.href = '#list';
 const addNew = document.createElement('a');
 addNew.innerText = 'Add New';
-addNew.href = '#add-new';
 const contact = document.createElement('a');
 contact.innerText = 'Contact';
-contact.href = '#contact';
 menu.appendChild(list);
 menu.appendChild(addNew);
 menu.appendChild(contact);
@@ -172,7 +169,7 @@ footer.appendChild(copyright);
 //HIDE ITEMS
 const addBook = document.querySelector('.add-book');
 list.addEventListener('click', () => {
-  bookList.style.display = 'block'
+  bookList.style.display = 'block';
   contactUs.style.display = 'none';
   addBook.style.display = 'none';
 });
@@ -185,7 +182,7 @@ addNew.addEventListener('click', () => {
   library.style.display = 'none';
 });
 
-contactUs.addEventListener('click', () => {
+contact.addEventListener('click', () => {
   bookList.style.display = 'none';
   contactUs.style.display = 'flex';
   addBook.style.display = 'none';
