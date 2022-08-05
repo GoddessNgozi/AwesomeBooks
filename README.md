@@ -49,7 +49,7 @@ These were linter tests mainly
 
 - GitHub: [NgozikaNwocha](https://github.com/githubhandle)
 - Twitter: [NgozikaNwocha](https://twitter.com/ngozikanwocha)
-- LinkedIn: [NgozikaNwocha](https://www.linkedin.com/in/ngozikanwocha/
+- LinkedIn: [NgozikaNwocha](https://www.linkedin.com/in/ngozikanwocha/)
 
 👤 **Kibirige John**
 
